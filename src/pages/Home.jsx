@@ -12,6 +12,7 @@ import Section8 from '../containers/Section8';
 import Section9 from '../containers/Section9';
 import Section10 from '../containers/Section10';
 import Section11 from '../containers/Section11';
+import { Box } from '@mui/material';
 
 const Home = () => {
   return (
@@ -22,19 +23,22 @@ const Home = () => {
       {/* Sections */}
       <Section1 />
       <Section2 />
-      <Section3 />
-      <Section4 />
-      <Section5 />
-      <Section6 />
-      <Section7 />
-      <Section8 />
-      <Section9 />
-      <Section10 />
-      <Section11 />
 
-      
-      {/*Footer */}
-      <Footer />
+      <Box sx={{ bgcolor: 'background.default', position: 'relative' }}>
+        <Section3 />
+        <Section4 />
+        <Section5 />
+        <Section6 />
+        <Section7 />
+        <Section8 />
+        <Section9 />
+        <Section10 />
+        <Section11 />
+
+        
+        {/*Footer */}
+        <Footer />
+      </Box>
     
     </div>
   )
