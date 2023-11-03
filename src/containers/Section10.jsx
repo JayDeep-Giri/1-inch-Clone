@@ -1,9 +1,39 @@
-import React from 'react'
+import Title from '../components/Title';
+import { Container, Grid, Stack, Typography } from '@mui/material';
+import React from 'react';
+import { section10Content } from '../utils/content';
+
+const { SOCIALS } = section10Content;
 
 const Section10 = () => {
   return (
-    <div>Section10</div>
+    <Container
+      maxWidth='md'
+      sx={{ mt: { xs: 10, md: 20, lg: 25 } }}>
+        <Title variant={{ xs: 'h3', md: 'h2' }} sx={{ textAlign: 'center', mb: { xs:5 } }}>Join Us</Title>
+
+        <Grid container spacing={3} justifyContent="center" sx={{ px: { xs: 0, md: 5, lg: 8 } }}>
+          {SOCIALS.map(({ name, image }) => (
+            <Grid item xs={6} md={3} key={name} sx={theme => ({
+              cursor: 'pointer',
+              '& :hover': {
+                '& img': {transform: 'Scale(1.2)', transition: 'tramsform .3s' },
+                '& p': { color: 'text.primary', transition: 'all .3s ease-in' }
+              }
+            })}>
+              <Stack alignItems='center'>
+                <img src={image} style={{ width: '120px', objectFit: 'contain' }} />
+
+                <Typography variant='body2' color='text.secondary'>
+                  {name}
+                </Typography>
+              </Stack>
+            </Grid>
+          ))
+          }
+        </Grid>
+      </Container>
   )
 }
 
-export default Section10
+export default Section10;

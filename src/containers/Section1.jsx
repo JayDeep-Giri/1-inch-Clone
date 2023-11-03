@@ -136,7 +136,7 @@ const Section1 = () => {
         sx={{
           height: "80vh",
           mt: 8,
-          [theme.breakpoints.up("md")]: { mt: 6 },
+          [theme.breakpoints.up("md")]: { mt: -5, mb: 5 },
         }}
       >
         <Stack sx={{ height: "100%" }} justifyContent="center">

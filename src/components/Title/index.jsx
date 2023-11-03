@@ -22,9 +22,11 @@ const Title = ({variant='h6', sx={}, children, ...props}) => {
             variant.xl || variant.lg || variant.md || variant.sm || variant.xs,
     };
   return (
-    <Typography variant="" sx={{...sx, typography: typeof _variantStyles === 'object' && _variantStyles,
-      fontWeight: `${sx.fontWeight || 600} !important`}}
-     component={_component} {...props}>
+    <Typography
+       //variant={variant}
+       sx={{...sx, typography: typeof _variantStyles === 'object' && _variantStyles,
+            fontWeight: `${sx.fontWeight || 600} !important`}}
+            component={_component} {...props}>
         {children}
     </Typography>
   )

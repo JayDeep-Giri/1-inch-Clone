@@ -1,9 +1,27 @@
-import React from 'react'
+import { Container, Grid } from '@mui/material';
+import React from 'react';
+import ServiceCard from '../components/Cards/ServiceCard';
+import { section9Content } from '../utils/content';
+import Title from '../components/Title';
+
+const { title, ITEMS } = section9Content;
 
 const Section9 = () => {
   return (
-    <div>Section9</div>
+    <Container sx={{ mt: { xs: 10, md: 20, lg: 25 } }}>
+      <Title variant={{ xs: 'h3', md: 'h2' }} sx={{ mb: { xs: 5, md: 8 } }}>
+        {title}
+      </Title>
+
+      <Grid container spacing={3}>
+        {ITEMS.map(item => (
+          <Grid item xs={12} md={6} key={item.title}>
+            <ServiceCard {...item}/>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   )
 }
 
-export default Section9
+export default Section9;
